@@ -1,6 +1,5 @@
 import fs from 'fs';
-import path from 'path';
-
+// import path from 'path';
 import gulp from 'gulp';
 
 // Load all gulp plugins automatically
@@ -11,8 +10,8 @@ import plugins from 'gulp-load-plugins';
 // https://github.com/gulpjs/gulp/issues/355
 import runSequence from 'run-sequence';
 
-import archiver from 'archiver';
-import glob from 'glob';
+// import archiver from 'archiver';
+// import glob from 'glob';
 import del from 'del';
 import ssri from 'ssri';
 import modernizr from 'modernizr';
@@ -27,7 +26,7 @@ const dirs = pkg['h5bp-configs'].directories;
 // | Helper tasks                                                      |
 // ---------------------------------------------------------------------
 
-gulp.task('archive:create_archive_dir', () => {
+/*gulp.task('archive:create_archive_dir', () => {
   fs.mkdirSync(path.resolve(dirs.archive), '0755');
 });
 
@@ -35,7 +34,7 @@ gulp.task('archive:zip', (done) => {
 
   const archiveName = path.resolve(dirs.archive, `${pkg.name}_v${pkg.version}.zip`);
   const zip = archiver('zip');
-  const files = glob.sync('**/*.*', {
+  const files = glob.sync('**!/!*.*', {
     'cwd': dirs.dist,
     'dot': true // include hidden files
   });
@@ -64,11 +63,11 @@ gulp.task('archive:zip', (done) => {
   zip.pipe(output);
   zip.finalize();
 
-});
+});*/
 
 gulp.task('clean', (done) => {
   del([
-    dirs.archive,
+    // dirs.archive,
     dirs.dist
   ]).then(() => {
     done();
@@ -119,10 +118,10 @@ gulp.task('copy:license', () =>
 
 gulp.task('copy:main.css', () => {
 
-  const banner = `/*! HTML5 Boilerplate v${pkg.version} | ${pkg.license} License | ${pkg.homepage} */\n\n`;
+  // const banner = `/*! HTML5 Boilerplate v${pkg.version} | ${pkg.license} License | ${pkg.homepage} */\n\n`;
 
   gulp.src(`${dirs.src}/css/main.css`)
-    .pipe(plugins().header(banner))
+    //.pipe(plugins().header(banner))
     .pipe(plugins().autoprefixer({
       browsers: ['last 2 versions', 'ie >= 9', '> 1%'],
       cascade: false
@@ -177,13 +176,13 @@ gulp.task('lint:js', () =>
 // | Main tasks                                                        |
 // ---------------------------------------------------------------------
 
-gulp.task('archive', (done) => {
+/*gulp.task('archive', (done) => {
   runSequence(
     'build',
     'archive:create_archive_dir',
     'archive:zip',
     done);
-});
+});*/
 
 gulp.task('build', (done) => {
   runSequence(

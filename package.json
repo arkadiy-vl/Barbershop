@@ -1,8 +1,15 @@
 {
-  "devDependencies": {
+  "//": {
     "@alrra/travis-scripts": "^3.0.1",
-    "apache-server-configs": "^3.0.0",
     "archiver": "^2.1.1",
+    "glob": "^7.1.2",
+    "mocha": "^5.1.1",
+    "gulp-header": "^2.0.5",
+    "strip-json-comments": "^2.0.1",
+    "travis-after-all": "^1.4.5"
+  },
+  "devDependencies": {
+    "apache-server-configs": "^3.0.0",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.6.1",
     "babel-register": "^6.26.0",
@@ -10,23 +17,18 @@
     "eslint": "^4.19.1",
     "eslint-config-recommended": "^2.0.0",
     "eslint-plugin-mocha": "^5.0.0",
-    "glob": "^7.1.2",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-eslint": "^4.0.2",
-    "gulp-header": "^2.0.5",
     "gulp-jscs": "^4.1.0",
     "gulp-load-plugins": "^1.5.0",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.6.1",
     "jquery": "3.3.1",
-    "mocha": "^5.1.1",
     "modernizr": "3.6.0",
     "normalize.css": "8.0.0",
     "run-sequence": "^2.2.1",
-    "ssri": "^6.0.0",
-    "strip-json-comments": "^2.0.1",
-    "travis-after-all": "^1.4.5"
+    "ssri": "^6.0.0"
   },
   "engines": {
     "node": ">=6",
