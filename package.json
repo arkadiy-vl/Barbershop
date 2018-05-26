@@ -4,6 +4,7 @@
     "archiver": "^2.1.1",
     "glob": "^7.1.2",
     "mocha": "^5.1.1",
+    "gulp-load-plugins": "^1.5.0",
     "gulp-header": "^2.0.5",
     "strip-json-comments": "^2.0.1",
     "travis-after-all": "^1.4.5"
@@ -13,17 +14,23 @@
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.6.1",
     "babel-register": "^6.26.0",
+    "browser-sync": "^2.24.4",
     "del": "^3.0.0",
     "eslint": "^4.19.1",
     "eslint-config-recommended": "^2.0.0",
     "eslint-plugin-mocha": "^5.0.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^5.0.0",
+    "gulp-clean-css": "^3.9.4",
     "gulp-eslint": "^4.0.2",
+    "gulp-if": "^2.0.2",
     "gulp-jscs": "^4.1.0",
-    "gulp-load-plugins": "^1.5.0",
-    "gulp-rename": "^1.2.2",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-rename": "^1.2.3",
     "gulp-replace": "^0.6.1",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
     "jquery": "3.3.1",
     "modernizr": "3.6.0",
     "normalize.css": "8.0.0",
@@ -42,9 +49,26 @@
   "h5bp-configs": {
     "directories": {
       "archive": "archive",
-      "dist": "dist",
+      "dest": "dist",
       "src": "src",
-      "test": "test"
+      "test": "test",
+      "precss": {
+        "src": "/css/",
+        "src_files": "/css/+(main|ie-main).sass",
+        "watch_files": "/css/**/*.+(scss|sass|css)",
+        "dest": "/css/"
+      },
+      "html": {
+        "src": "/",
+        "watch_files": "/*.html",
+        "dest": "/"
+      },
+      "js": {
+        "src": "/js/",
+        "lib": "/js/vendor/",
+        "watch": "**/*.js",
+        "dest": "/js/"
+      }
     }
   },
   "homepage": "https://html5boilerplate.com/",
